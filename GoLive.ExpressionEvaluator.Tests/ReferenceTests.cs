@@ -70,8 +70,7 @@ namespace GoLive.ExpressionEvaluator.Tests
 					eval.Exec();
 				});
 
-			Assert.IsTrue(
-				ex.Message.Contains("The type or namespace name 'GoLive.ExpressionEvaluator.Tests.ExternalReference' could not be found (are you missing a using directive or an assembly reference?)"));
+			Assert.IsTrue(ex.Message.Contains("The type or namespace name 'ExternalReference' does not exist in the namespace 'GoLive.ExpressionEvaluator.Tests' (are you missing an assembly reference?)"));
 		}
 
 		[Test]
