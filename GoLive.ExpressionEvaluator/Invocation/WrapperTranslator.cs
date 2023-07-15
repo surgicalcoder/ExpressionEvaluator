@@ -17,59 +17,34 @@ namespace Data.Eval.Invocation
 				memberName,
 				BindingFlags.Public | BindingFlags.Instance);
 
-			ConstructorInfo constructor = member.FieldType.GetConstructor(
-				new Type[]
-				{
-					typeof(object)
-				});
+			ConstructorInfo constructor = member.FieldType.GetConstructor(new[] { typeof(object) });
 
-			NewExpression constructorExp = Expression.New(
-				constructor,
-				argument);
+			NewExpression constructorExp = Expression.New(constructor, argument);
 
-			MemberExpression memberExp = Expression.Field(
-				Expression.Convert(instance, instanceType),
-				member);
+			MemberExpression memberExp = Expression.Field(Expression.Convert(instance, instanceType), member);
 
-			BinaryExpression assignExp = Expression.Assign(
-				memberExp,
-				constructorExp);
+			BinaryExpression assignExp = Expression.Assign(memberExp, constructorExp);
 
-			Expression<Action<object, object>> setter = Expression.Lambda<Action<object, object>>(
-				assignExp,
-				instance,
-				argument);
+			Expression<Action<object, object>> setter = Expression.Lambda<Action<object, object>>(assignExp, instance, argument);
 
 			Action<object, object> action = setter.Compile();
 
 			return action;
 		}
 		
-		public Func<object, object> GetGetAndUnwrap(
-			Type instanceType,
-			string memberName)
+		public Func<object, object> GetGetAndUnwrap(Type instanceType, string memberName)
 		{
 			ParameterExpression instance = Expression.Parameter(typeof(object), "i");
 
-			FieldInfo member = instanceType.GetField(
-				memberName,
-				BindingFlags.Public | BindingFlags.Instance);
+			FieldInfo member = instanceType.GetField(memberName, BindingFlags.Public | BindingFlags.Instance);
 
-			PropertyInfo unwrappedMember = member.FieldType.GetProperty(
-				"InnerObject",
-				BindingFlags.Public | BindingFlags.Instance);
+			PropertyInfo unwrappedMember = member.FieldType.GetProperty("InnerObject", BindingFlags.Public | BindingFlags.Instance);
 
-			MemberExpression memberExp = Expression.Field(
-				Expression.Convert(instance, member.DeclaringType),
-				member);
+			MemberExpression memberExp = Expression.Field(Expression.Convert(instance, member.DeclaringType), member);
 
-			MemberExpression innerExp = Expression.Property(
-				memberExp,
-				unwrappedMember);
+			MemberExpression innerExp = Expression.Property(memberExp, unwrappedMember);
 
-			Expression<Func<object, object>> getter = Expression.Lambda<Func<object, object>>(
-				Expression.Convert(innerExp, typeof(object)),
-				instance);
+			Expression<Func<object, object>> getter = Expression.Lambda<Func<object, object>>(Expression.Convert(innerExp, typeof(object)), instance);
 
 			Func<object, object> func = getter.Compile();
 

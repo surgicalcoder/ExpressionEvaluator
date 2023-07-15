@@ -5,7 +5,6 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>TestExternalReference.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <RootNamespace>TestExternalReference</RootNamespace>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
 

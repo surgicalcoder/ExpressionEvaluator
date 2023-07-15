@@ -9,22 +9,13 @@ namespace Data.Eval.Invocation.Expressions
 		public Func<object, object> GetFunc(
 			Type instanceType)
 		{
-			ConstructorInfo constructor = instanceType.GetConstructor(
-				new Type[]
-				{
-					typeof(object)
-				});
+			ConstructorInfo constructor = instanceType.GetConstructor(new[] { typeof(object) });
 
-			ParameterExpression wrappedObject = Expression.Parameter(
-				typeof(object));
+			ParameterExpression wrappedObject = Expression.Parameter(typeof(object));
 
-			NewExpression constructorExp = Expression.New(
-				constructor,
-				wrappedObject);
+			NewExpression constructorExp = Expression.New(constructor, wrappedObject);
 
-			Expression<Func<object, object>> constructorCall = Expression.Lambda<Func<object, object>>(
-				constructorExp,
-				wrappedObject);
+			Expression<Func<object, object>> constructorCall = Expression.Lambda<Func<object, object>>(constructorExp, wrappedObject);
 
 			Func<object, object> func = constructorCall.Compile();
 

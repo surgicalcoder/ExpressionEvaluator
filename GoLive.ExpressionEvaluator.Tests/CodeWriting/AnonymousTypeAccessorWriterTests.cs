@@ -25,9 +25,7 @@ namespace Tests.CodeWriting
 
 			var writer = new InternalTypeAccessorWriter();
 
-			var classText = writer.GetClassTest(
-				test.GetType(), 
-				"SimpleAnonymousTestWrapper");
+			var classText = writer.GetClassTest(test.GetType(), "SimpleAnonymousTestWrapper");
 
 			Assert.AreEqual(
 				ResourceReader.SimpleAnonymousTestWrapper.Replace("\r\n", "\n"),

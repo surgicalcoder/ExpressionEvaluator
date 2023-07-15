@@ -6,11 +6,7 @@ namespace Data.Eval.Invocation.Expressions
 	{
 		public Func<object, T> GetFunc()
 		{
-			Func<object, T> func = (obj) =>
-			{
-				return (T)Convert.ChangeType(obj, typeof(T));
-			};
-
+			Func<object, T> func = (obj) => (T)Convert.ChangeType(obj, typeof(T));
 			return func;
 		}
 	}

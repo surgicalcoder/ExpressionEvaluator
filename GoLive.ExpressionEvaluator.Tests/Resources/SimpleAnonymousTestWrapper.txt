@@ -6,9 +6,7 @@
 	{
 		if (properties == null)
 		{
-			properties = new ReadonlyPropertyAccessor()
-				.GetProperties(
-					innerObject.GetType());
+			properties = new ReadonlyPropertyAccessor().GetProperties(innerObject.GetType());
 		}
 
 		this.InnerObject = innerObject;

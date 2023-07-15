@@ -30,8 +30,7 @@ namespace Data.Eval.Compilation
 		/// 
 		/// </summary>
 		/// <param name="message"></param>
-		public CompilationException(string message)
-			: base(message)
+		public CompilationException(string message) : base(message)
 		{
 
 		}
@@ -41,8 +40,7 @@ namespace Data.Eval.Compilation
 		/// </summary>
 		/// <param name="message"></param>
 		/// <param name="innerException"></param>
-		public CompilationException(string message, Exception innerException)
-			: base(message, innerException)
+		public CompilationException(string message, Exception innerException) : base(message, innerException)
 		{
 
 		}
@@ -52,8 +50,7 @@ namespace Data.Eval.Compilation
 		/// </summary>
 		/// <param name="info"></param>
 		/// <param name="context"></param>
-		private CompilationException(SerializationInfo info, StreamingContext context)
-			: base(info, context)
+		private CompilationException(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
 			
 		}

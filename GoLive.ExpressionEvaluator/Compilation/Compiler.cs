@@ -12,23 +12,12 @@ namespace Data.Eval.Compilation
 {
 	internal sealed class Compiler
 	{
-		public Type Compile(
-			string classText,
-			string assemblyName,
-			string className)
+		public Type Compile(string classText, string assemblyName, string className)
 		{
-			return Compile(
-				classText,
-				new List<string>(),
-				assemblyName,
-				className);
+			return Compile(classText, new List<string>(), assemblyName, className);
 		}
 
-		public Type Compile(
-			string classText,
-			List<string> referenceAssemblies,
-			string assemblyName,
-			string className)
+		public Type Compile(string classText, List<string> referenceAssemblies, string assemblyName, string className)
 		{
 			// https://stackoverflow.com/questions/23907305/roslyn-has-no-reference-to-system-runtime
 
@@ -62,11 +51,8 @@ namespace Data.Eval.Compilation
 
 			SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(classText);
 
-			CSharpCompilation compilation = CSharpCompilation.Create(
-				assemblyName,
-				new[] { syntaxTree },
-				references,
-				new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+			CSharpCompilation compilation = CSharpCompilation.Create(assemblyName, new[] { syntaxTree },
+				references, new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
 			using (MemoryStream ms = new MemoryStream())
 			{
@@ -80,7 +66,7 @@ namespace Data.Eval.Compilation
 						.Where(e => e.Severity == DiagnosticSeverity.Error || e.IsWarningAsError)
 						.OrderBy(e => e.Location.GetLineSpan().StartLinePosition.Line))
 					{							
-						exceptionMessage += "\n\tLine " + error.Location.GetLineSpan().StartLinePosition.Line.ToString() + ": " + error.GetMessage();
+						exceptionMessage += $"\n\tLine {error.Location.GetLineSpan().StartLinePosition.Line}: {error.GetMessage()}";
 					}
 
 					throw new CompilationException(exceptionMessage)

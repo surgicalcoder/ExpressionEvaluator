@@ -10,19 +10,13 @@ namespace Data.Eval.Invocation.Expressions
 			Type instanceType,
 			string memberName)
 		{
-			FieldInfo member = instanceType.GetField(
-				memberName,
-				BindingFlags.Public | BindingFlags.Instance);
+			FieldInfo member = instanceType.GetField(memberName, BindingFlags.Public | BindingFlags.Instance);
 
 			ParameterExpression instance = Expression.Parameter(typeof(object), "i");
 
-			MemberExpression memberExp = Expression.Field(
-				Expression.Convert(instance, instanceType),
-				member);
+			MemberExpression memberExp = Expression.Field(Expression.Convert(instance, instanceType), member);
 
-			Expression<Func<object, object>> getter = Expression.Lambda<Func<object, object>>(
-				Expression.Convert(memberExp, typeof(object)),
-				instance);
+			Expression<Func<object, object>> getter = Expression.Lambda<Func<object, object>>(Expression.Convert(memberExp, typeof(object)), instance);
 
 			Func<object, object> func = getter.Compile();
 

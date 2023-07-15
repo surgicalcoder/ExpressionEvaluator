@@ -6,38 +6,16 @@ namespace Data.Eval.CodeWriting
 {
 	internal sealed class CSharpCodeWriter
 	{
-		public string GetClassText(
-			string expression,
-			List<Variable> variables,
-			List<string> usings,
-			List<string> methods,
-			bool withReturn)
+		public string GetClassText(string expression, List<Variable> variables, List<string> usings, List<string> methods, bool withReturn)
 		{
 			string signature;
 
-			if (withReturn)
-			{
-				signature = "public object Eval()";
-			}
-			else
-			{
-				signature = "public void Eval()";
-			}
+			signature = withReturn ? "public object Eval()" : "public void Eval()";
 
-			return GetClassText(
-				expression,
-				variables,
-				usings,
-				methods,
-				signature);
+			return GetClassText(expression, variables, usings, methods, signature);
 		}
 
-		private string GetClassText(
-			string expression,
-			List<Variable> variables,
-			List<string> usings,
-			List<string> methods,
-			string signature)
+		private string GetClassText(string expression, List<Variable> variables, List<string> usings, List<string> methods, string signature)
 		{
 			StringBuilder classText = new StringBuilder();
 
@@ -48,11 +26,9 @@ namespace Data.Eval.CodeWriting
 
 			if (usings.Count > 0)
 			{
-				foreach (string usingNamespace in usings)
+				foreach (var usingNamespace in usings)
 				{
-					classText.AppendFormat(
-						"using {0};\r\n",
-						usingNamespace);
+					classText.Append($"using {usingNamespace};\r\n");
 				}
 
 				classText.Append("\r\n");
@@ -60,9 +36,9 @@ namespace Data.Eval.CodeWriting
 
 			classText.Append("public sealed class CustomEvaluator\r\n{\r\n");
 
-			Dictionary<string, string> wrappedClasses = new Dictionary<string, string>();
+			var wrappedClasses = new Dictionary<string, string>();
 
-			if (variables != null && variables.Count > 0)
+			if (variables is { Count: > 0 })
 			{
 				CSharpClassNameFormatter formatter = new CSharpClassNameFormatter();
 
@@ -70,17 +46,11 @@ namespace Data.Eval.CodeWriting
 				{
 					string variableType = formatter.GetFullName(variable.Type);
 
-					classText.AppendFormat(
-						"\tpublic {0} {1};\r\n",
-						variableType,
-						variable.Name);
+					classText.Append($"\tpublic {variableType} {variable.Name};\r\n");
 
-					if (variable.Type.IsNotPublic &&
-						!wrappedClasses.ContainsKey(variableType))
+					if (variable.Type.IsNotPublic && !wrappedClasses.ContainsKey(variableType))
 					{
-						wrappedClasses[variableType] = new InternalTypeAccessorWriter().GetClassTest(
-							variable.Type,
-							variableType);
+						wrappedClasses[variableType] = new InternalTypeAccessorWriter().GetClassTest(variable.Type, variableType);
 					}
 				}
 
@@ -91,19 +61,13 @@ namespace Data.Eval.CodeWriting
 			{
 				foreach (string method in methods)
 				{
-					classText.AppendFormat(
-						"{0}\r\n",
-						method);
+					classText.Append($"{method}\r\n");
 				}
 			}
 
-			classText.AppendFormat(
-				"\t{0}\r\n\t{{\r\n",
-				signature);
+			classText.Append($"\t{signature}\r\n\t{{\r\n");
 
-			classText.AppendFormat(
-				"\t\t{0};\r\n",
-				expression);
+			classText.Append($"\t\t{expression};\r\n");
 
 			classText.Append("\t}\r\n}\r\n");
 

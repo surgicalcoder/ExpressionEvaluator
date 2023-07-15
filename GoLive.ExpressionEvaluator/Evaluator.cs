@@ -38,8 +38,7 @@ namespace Data.Eval
 		///		"return 1+1" for evaluation or
 		///		"System.Console.WriteLine(\"Hello World!\")" for execution.
 		/// </param>
-		public Evaluator(
-			string expression)
+		public Evaluator(string expression)
 		{
 			this.expression = expression;
 		}
@@ -57,30 +56,15 @@ namespace Data.Eval
 		/// </returns>
 		public object this[string name]
 		{
-			get
-			{
-				return GetVariable(name);
-			}
-
-			set
-			{
-				SetVariable(
-					name,
-					value);
-			}
+			get => GetVariable(name);
+			set => SetVariable(name, value);
 		}
 
 		/// <summary>
 		///		Returns a list of all the variables that have been added to the
 		///		Evaluator context.
 		/// </summary>
-		public List<string> VariableNames
-		{
-			get
-			{
-				return variables.Keys.ToList();
-			}
-		}
+		public List<string> VariableNames => variables.Keys.ToList();
 
 		/// <summary>
 		///		If set, the definition of the internal evaluation class will be saved
@@ -99,14 +83,9 @@ namespace Data.Eval
 		/// <param name="value">
 		///		Value of the variable that should be used when evaluating the expression.
 		/// </param>
-		public void SetVariable(
-			string name,
-			object value)
+		public void SetVariable(string name, object value)
 		{
-			SetVariable(
-				name,
-				value,
-				value.GetType());
+			SetVariable(name, value, value.GetType());
 		}
 
 		/// <summary>
@@ -124,14 +103,11 @@ namespace Data.Eval
 		/// <param name="type">
 		///		The variable Type.
 		/// </param>
-		public void SetVariable(
-			string name,
-			object value,
-			Type type)
+		public void SetVariable(string name, object value, Type type)
 		{
-			if (variables.ContainsKey(name))
+			if (variables.TryGetValue(name, out var variable))
 			{
-				variables[name].Value = value;
+				variable.Value = value;
 			}
 			else
 			{
@@ -163,11 +139,7 @@ namespace Data.Eval
 		/// <returns>
 		///		Value of the variable referenced within the expression after evaluation.
 		/// </returns>
-		public object GetVariable(
-			string name)
-		{
-			return variables[name].Value;
-		}
+		public object GetVariable(string name) => variables[name].Value;
 
 		/// <summary>
 		///		Allows methods and types from an external library to be referenced
@@ -178,11 +150,9 @@ namespace Data.Eval
 		///		Absolute or relative path to the location of the referenced
 		///		assembly.
 		/// </param>
-		public void AddReference(
-			string assemblyPath)
+		public void AddReference(string assemblyPath)
 		{
 			references.Add(assemblyPath);
-
 			initialized = false;
 		}
 
@@ -194,11 +164,9 @@ namespace Data.Eval
 		/// <param name="assembly">
 		///		Assembly reference object from the calling scope.
 		/// </param>
-		public void AddReference(
-			Assembly assembly)
+		public void AddReference(Assembly assembly)
 		{
 			references.Add(assembly.Location);
-
 			initialized = false;
 		}
 
@@ -210,11 +178,9 @@ namespace Data.Eval
 		///		Fully qualified namespace to be added to the expression execution
 		///		context, e.g. "System.Collections.Generic".
 		/// </param>
-		public void AddUsing(
-			string usingNamespace)
+		public void AddUsing(string usingNamespace)
 		{
 			usings.Add(usingNamespace);
-
 			initialized = false;
 		}
 
@@ -226,31 +192,23 @@ namespace Data.Eval
 		///		Full definition of the method to add to the expression execution
 		///		context. Can be public or private, static or non-static.
 		/// </param>
-		public void AddMethod(
-			string methodDefinition)
+		public void AddMethod(string methodDefinition)
 		{
 			methods.Add(methodDefinition);
-
 			initialized = false;
 		}
 
 		private void InitEval(string caller)
 		{
-			Init(
-				caller,
-				hasReturn: true);
+			Init(caller, hasReturn: true);
 		}
 
 		private void InitExec(string caller)
 		{
-			Init(
-				caller,
-				hasReturn: false);
+			Init(caller, hasReturn: false);
 		}
 
-		private void Init(
-			string caller,
-			bool hasReturn)
+		private void Init(string caller, bool hasReturn)
 		{
 			CSharpCodeWriter writer = new CSharpCodeWriter();
 
@@ -267,9 +225,7 @@ namespace Data.Eval
 
 			if (DebugFileOutputName != null)
 			{
-				File.WriteAllText(
-					DebugFileOutputName,
-					classText);
+				File.WriteAllText(DebugFileOutputName, classText);
 			}
 
 			// instead of taking the everytime hit of a synchronized lock
@@ -303,8 +259,7 @@ namespace Data.Eval
 					"EvalAssembly",
 					"CustomEvaluator");
 
-				execution.Constructor = new DefaultClassConstructorExpression().GetFunc(
-					newType);
+				execution.Constructor = new DefaultClassConstructorExpression().GetFunc(newType);
 
 				foreach (string key in variables.Keys)
 				{
@@ -315,23 +270,15 @@ namespace Data.Eval
 
 					if (variable.Type.IsPublic)
 					{
-						getter = new GetInstanceMemberValueExpression().GetFunc(
-							newType,
-							key);
+						getter = new GetInstanceMemberValueExpression().GetFunc(newType, key);
 
-						setter = new SetInstanceMemberValueExpression().GetAction(
-							newType,
-							key);
+						setter = new SetInstanceMemberValueExpression().GetAction(newType, key);
 					}
 					else
 					{
-						getter = new WrapperTranslator().GetGetAndUnwrap(
-							newType,
-							key);
+						getter = new WrapperTranslator().GetGetAndUnwrap(newType, key);
 
-						setter = new WrapperTranslator().GetWrapAndSet(
-							newType,
-							key);
+						setter = new WrapperTranslator().GetWrapAndSet(newType, key);
 					}
 
 					execution.Variables[key] = new ExecutionVariable
@@ -374,15 +321,11 @@ namespace Data.Eval
 
 			object newObject = execution.Constructor();
 
-			SetVariableValuesOnExecutionContext(
-				newObject);
+			SetVariableValuesOnExecutionContext(newObject);
 
-			object result = execution.Evaluate(
-				newObject,
-				new object[] { });
+			object result = execution.Evaluate(newObject, Array.Empty<object>());
 
-			GetVariableValuesFromExecutionContext(
-				newObject);
+			GetVariableValuesFromExecutionContext(newObject);
 
 			return result;
 		}
@@ -424,8 +367,8 @@ namespace Data.Eval
 
 			object answer = EvalInternal();
 
-			CastExpression<T> exp = new CastExpression<T>();
-			Func<object, T> cast = exp.GetFunc();
+			var exp = new CastExpression<T>();
+			var cast = exp.GetFunc();
 
 			return cast(answer);
 		}
@@ -488,48 +431,44 @@ namespace Data.Eval
 
 			object newObject = execution.Constructor();
 
-			SetVariableValuesOnExecutionContext(
-				newObject);
+			SetVariableValuesOnExecutionContext(newObject);
 
-			execution.Execute(
-				newObject,
-				new object[] { });
+			execution.Execute(newObject, new object[] { });
 
-			GetVariableValuesFromExecutionContext(
-				newObject);
+			GetVariableValuesFromExecutionContext(newObject);
 		}
 
-		private void SetVariableValuesOnExecutionContext(
-			object newObject)
+		private void SetVariableValuesOnExecutionContext(object newObject)
 		{
-			if (execution.Variables.Count > 0)
+			if (execution.Variables.Count <= 0)
 			{
-				foreach (var variable in execution.Variables)
-				{
-					Action<object, object> set = variable.Value.Setter;
+				return;
+			}
 
-					object variableValue = variables[variable.Key].Value;
+			foreach (var variable in execution.Variables)
+			{
+				Action<object, object> set = variable.Value.Setter;
 
-					set(
-						newObject,
-						variableValue);
-				}
+				object variableValue = variables[variable.Key].Value;
+
+				set(newObject, variableValue);
 			}
 		}
 
-		private void GetVariableValuesFromExecutionContext(
-			object newObject)
+		private void GetVariableValuesFromExecutionContext(object newObject)
 		{
-			if (execution.Variables.Count > 0)
+			if (execution.Variables.Count <= 0)
 			{
-				foreach (var variable in execution.Variables)
-				{
-					Func<object, object> get = variable.Value.Getter;
+				return;
+			}
 
-					object variableValue = get(newObject);
+			foreach (var variable in execution.Variables)
+			{
+				Func<object, object> get = variable.Value.Getter;
 
-					variables[variable.Key].Value = variableValue;
-				}
+				object variableValue = get(newObject);
+
+				variables[variable.Key].Value = variableValue;
 			}
 		}
 

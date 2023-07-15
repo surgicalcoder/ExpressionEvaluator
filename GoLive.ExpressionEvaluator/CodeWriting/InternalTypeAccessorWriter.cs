@@ -13,19 +13,17 @@ namespace Data.Eval.CodeWriting
 	/// </summary>
 	internal sealed class InternalTypeAccessorWriter
 	{
-		public string GetClassTest(
-			Type type,
-			string className)
+		public string GetClassTest(Type type, string className)
 		{
 			PropertyFinder finder = new PropertyFinder();
 
 			Dictionary<string, Type> properties = finder.GetProperties(type);
 
-			StringBuilder propertiesText = new StringBuilder();
+			var propertiesText = new StringBuilder();
 
-			CSharpClassNameFormatter formatter = new CSharpClassNameFormatter();
+			var formatter = new CSharpClassNameFormatter();
 
-			List<string> keys = properties.Keys.ToList();
+			var keys = properties.Keys.ToList();
 
 			for (int i = 0; i < keys.Count; i++)
 			{
@@ -38,45 +36,47 @@ namespace Data.Eval.CodeWriting
 				}
 
 				propertiesText.Append(
-$@"public {formatter.GetFullName(propertyType)} {propertyName}
-	{{
-		get
-		{{
-			return ({formatter.GetFullName(propertyType)})GetValue(""{propertyName}"");
-		}}
-	}}");
+					$$"""
+					  public {{formatter.GetFullName(propertyType)}} {{propertyName}}
+					  	{
+					  		get
+					  		{
+					  			return ({{formatter.GetFullName(propertyType)}})GetValue("{{propertyName}}");
+					  		}
+					  	}
+					  """);
 			}
 
 			// TODO: should wrapper class implement any interfaces or extend from any classes
 			// that wrapped class implements?
 
 			string classText =
-$@"public sealed class {className}
-{{
-	private static System.Collections.Generic.Dictionary<string, Func<object, object>> properties = null;
-	
-	public {className}(object innerObject)
-	{{
-		if (properties == null)
-		{{
-			properties = new ReadonlyPropertyAccessor()
-				.GetProperties(
-					innerObject.GetType());
-		}}
+				$$"""
+				  public sealed class {{className}}
+				  {
+				  	private static System.Collections.Generic.Dictionary<string, Func<object, object>> properties = null;
+				  	
+				  	public {{className}}(object innerObject)
+				  	{
+				  		if (properties == null)
+				  		{
+				  			properties = new ReadonlyPropertyAccessor().GetProperties(innerObject.GetType());
+				  		}
+				  
+				  		this.InnerObject = innerObject;
+				  	}
+				  
+				  	public object InnerObject { get; set; }
+				  	
+				  	{{propertiesText}}
+				  	
+				  	private object GetValue(string property)
+				  	{
+				  		return properties[property](InnerObject);
+				  	}
+				  }
 
-		this.InnerObject = innerObject;
-	}}
-
-	public object InnerObject {{ get; set; }}
-	
-	{propertiesText}
-	
-	private object GetValue(string property)
-	{{
-		return properties[property](InnerObject);
-	}}
-}}
-";
+				  """;
 
 			return classText;
 		}

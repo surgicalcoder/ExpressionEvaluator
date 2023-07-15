@@ -6,8 +6,7 @@ using NUnit.Framework;
 
 using Data.Eval;
 using Data.Eval.Compilation;
-
-using TestExternalReference;
+using GoLive.ExpressionEvaluator.Tests.ExternalReference;
 
 namespace Tests
 {
@@ -55,7 +54,7 @@ namespace Tests
 		public void Evaluator_ExecAddUsing()
 		{
 			var eval = new Evaluator("message = ExampleClass.HelloWorld");
-			eval.AddReference(typeof(TestExternalReference.ExampleClass).Assembly.Location);
+			eval.AddReference(typeof(ExampleClass).Assembly.Location);
 			eval.AddUsing("GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference");
 			eval["message"] = "";
 			eval.Exec();
@@ -67,7 +66,7 @@ namespace Tests
 		{
 			// this should fail without the call to AddReference
 			var eval = new Evaluator("message = ExampleClass.HelloWorld");
-			eval.AddUsing("GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference");
+			eval.AddUsing("GoLive.ExpressionEvaluator.Tests.ExternalReference");
 			eval["message"] = "";
 
 			CompilationException ex = Assert.Throws<CompilationException>(
@@ -77,7 +76,7 @@ namespace Tests
 				});
 
 			Assert.IsTrue(
-				ex.Message.Contains("The type or namespace name 'GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference' could not be found (are you missing a using directive or an assembly reference?)"));
+				ex.Message.Contains("The type or namespace name 'GoLive.ExpressionEvaluator.Tests.ExternalReference' could not be found (are you missing a using directive or an assembly reference?)"));
 		}
 
 		[Test]

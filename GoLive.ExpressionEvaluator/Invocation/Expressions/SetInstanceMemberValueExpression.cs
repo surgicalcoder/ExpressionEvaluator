@@ -10,25 +10,16 @@ namespace Data.Eval.Invocation.Expressions
 			Type instanceType,
 			string memberName)
 		{
-			FieldInfo member = instanceType.GetField(
-				memberName,
-				BindingFlags.Public | BindingFlags.Instance);
+			FieldInfo member = instanceType.GetField(memberName, BindingFlags.Public | BindingFlags.Instance);
 
 			ParameterExpression instance = Expression.Parameter(typeof(object), "i");
 			ParameterExpression argument = Expression.Parameter(typeof(object), "a");
 
-			MemberExpression memberExp = Expression.Field(
-				Expression.Convert(instance, instanceType),
-				member);
+			MemberExpression memberExp = Expression.Field(Expression.Convert(instance, instanceType), member);
 
-			BinaryExpression assignExp = Expression.Assign(
-				memberExp,
-				Expression.Convert(argument, member.FieldType));
+			BinaryExpression assignExp = Expression.Assign(memberExp, Expression.Convert(argument, member.FieldType));
 
-			Expression<Action<object, object>> setter = Expression.Lambda<Action<object, object>>(
-				assignExp,
-				instance,
-				argument);
+			Expression<Action<object, object>> setter = Expression.Lambda<Action<object, object>>(assignExp, instance, argument);
 
 			Action<object, object> action = setter.Compile();
 

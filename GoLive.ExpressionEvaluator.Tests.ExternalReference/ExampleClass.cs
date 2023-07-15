@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TestExternalReference
+﻿namespace GoLive.ExpressionEvaluator.Tests.ExternalReference
 {
     public static class ExampleClass
     {
