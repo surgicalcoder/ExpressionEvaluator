@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DhkvK40xwzmcm0gPF4o67cwB4vbkShCNAaaPEho39DjuKcHWZCKq3frqY6MNXpxTF9A3nzwri62Vrq07uNjosQ==",
+  "dgSpecHash": "+TAnWneo7eL+wVRjwetUd/hOvEfOusikg83FdPtnELenVhlIvzKAZ+eQdYBAjIzGt01xu7JDDzw63KYLHn6tbg==",
   "success": true,
-  "projectFilePath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests\\GoLive.ExpressionEvaluator.Tests.csproj",
+  "projectFilePath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests\\GoLive.ExpressionEvaluator.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Monty\\.nuget\\packages\\ewsoftware.shfb\\2020.3.6\\ewsoftware.shfb.2020.3.6.nupkg.sha512",
     "C:\\Users\\Monty\\.nuget\\packages\\ewsoftware.shfb.netframework\\4.8.0\\ewsoftware.shfb.netframework.4.8.0.nupkg.sha512",

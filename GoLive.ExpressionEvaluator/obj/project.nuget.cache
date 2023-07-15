@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k8lsaCQ+P+F2tUJe6E4LAZg6q1vOIcdr+3eJxnwIttJe/Gt7iv0xFKoErCao+1eGpsSdhTkt/ZoiUSDxYajBFg==",
+  "dgSpecHash": "b8FLMeulZuChKugQr1lix8h0Vyac3BdbNy3FtS7jUsDgZ3y1U14v4TOgoGLRtp44ojNCsjDJAf7AAsQDKSNULA==",
   "success": true,
-  "projectFilePath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj",
+  "projectFilePath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Monty\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
     "C:\\Users\\Monty\\.nuget\\packages\\microsoft.codeanalysis.common\\3.6.0\\microsoft.codeanalysis.common.3.6.0.nupkg.sha512",

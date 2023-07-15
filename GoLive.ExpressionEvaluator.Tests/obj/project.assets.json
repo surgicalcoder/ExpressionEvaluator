@@ -7952,11 +7952,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests\\GoLive.ExpressionEvaluator.Tests.csproj",
+      "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests\\GoLive.ExpressionEvaluator.Tests.csproj",
       "projectName": "GoLive.ExpressionEvaluator.Tests",
-      "projectPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests\\GoLive.ExpressionEvaluator.Tests.csproj",
+      "projectPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests\\GoLive.ExpressionEvaluator.Tests.csproj",
       "packagesPath": "C:\\Users\\Monty\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests\\obj\\",
+      "outputPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Monty\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7971,11 +7971,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {
-              "projectPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj"
+            "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {
+              "projectPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj"
             },
-            "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj": {
-              "projectPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj"
+            "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj": {
+              "projectPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj"
             }
           }
         }

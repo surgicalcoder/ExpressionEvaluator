@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {}
+    "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {}
   },
   "projects": {
-    "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {
+    "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
+        "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
         "projectName": "GoLive.ExpressionEvaluator.Tests.ExternalReference",
-        "projectPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
+        "projectPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
         "packagesPath": "C:\\Users\\Monty\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\obj\\",
+        "outputPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Monty\\AppData\\Roaming\\NuGet\\NuGet.Config"

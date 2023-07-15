@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U1UcWaWX4KmrAix2vqnOD41A8GC17or1Z2n3dEcy/SXwPeueEaG0YuhyBX5S/WjUCCsKnvZNVOgS0nCR6u47zQ==",
+  "dgSpecHash": "uQ40p0suRWUhUnltkxcqR0sV7hDVU94ni0XLInglT1VoKUyrbniEqr6QFDpKR3QARNld2hc1D8fXgEOxI1lh/A==",
   "success": true,
-  "projectFilePath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
+  "projectFilePath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Monty\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
     "C:\\Users\\Monty\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",

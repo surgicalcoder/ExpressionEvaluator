@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj": {}
+    "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj": {}
   },
   "projects": {
-    "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj": {
+    "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj": {
       "version": "2.5.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj",
+        "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj",
         "projectName": "GoLive.ExpressionEvaluator",
-        "projectPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj",
+        "projectPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\GoLive.ExpressionEvaluator.csproj",
         "packagesPath": "C:\\Users\\Monty\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator\\obj\\",
+        "outputPath": "D:\\Work\\ExpressionEvaluator\\GoLive.ExpressionEvaluator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Monty\\AppData\\Roaming\\NuGet\\NuGet.Config"
