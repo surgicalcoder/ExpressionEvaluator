@@ -5,6 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Tests.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
+    <RootNamespace>Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data_Eval\Data_Eval.csproj" />
-    <ProjectReference Include="..\TestExternalReference\TestExternalReference.csproj" />
+    <ProjectReference Include="..\GoLive.ExpressionEvaluator\GoLive.ExpressionEvaluator.csproj" />
+    <ProjectReference Include="..\GoLive.ExpressionEvaluator.Tests.ExternalReference\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj" />
   </ItemGroup>
 
   <ItemGroup>

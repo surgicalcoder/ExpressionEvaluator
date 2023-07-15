@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_Eval", "Data_Eval\Data_Eval.csproj", "{5FF672D0-8EB8-4FA9-BA90-F52CD91943DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLive.ExpressionEvaluator", "GoLive.ExpressionEvaluator\GoLive.ExpressionEvaluator.csproj", "{5FF672D0-8EB8-4FA9-BA90-F52CD91943DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{200C57A0-3B8D-4D20-8234-C61112E31E0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLive.ExpressionEvaluator.Tests", "GoLive.ExpressionEvaluator.Tests\GoLive.ExpressionEvaluator.Tests.csproj", "{200C57A0-3B8D-4D20-8234-C61112E31E0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestExternalReference", "TestExternalReference\TestExternalReference.csproj", "{A39A7773-DC54-4214-A9D9-5C206B7A8E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoLive.ExpressionEvaluator.Tests.ExternalReference", "GoLive.ExpressionEvaluator.Tests.ExternalReference\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj", "{A39A7773-DC54-4214-A9D9-5C206B7A8E71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

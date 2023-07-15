@@ -17,7 +17,7 @@ namespace Tests
 		[Test]
 		public void Evaluator_EvalAddCallingAssemblyReference()
 		{
-			var eval = new Evaluator("return Tests.ReferenceTests.Multiply(x, y)");
+			var eval = new Evaluator("return GoLive.ExpressionEvaluator.Tests.ReferenceTests.Multiply(x, y)");
 			eval["x"] = 2;
 			eval["y"] = 3;
 			var result = eval.Eval<int>();
@@ -33,7 +33,7 @@ namespace Tests
 		public void Evaluator_EvalAddUsing()
 		{
 			var eval = new Evaluator("return ReferenceTests.Multiply(x, y)");
-			eval.AddUsing("Tests");
+			eval.AddUsing("GoLive.ExpressionEvaluator.Tests");
 			eval["x"] = 2;
 			eval["y"] = 3;
 			var result = eval.Eval<int>();
@@ -43,7 +43,7 @@ namespace Tests
 		[Test]
 		public void Evaluator_ExecAddCallingAssemblyReference()
 		{
-			var eval = new Evaluator("z = Tests.ReferenceTests.Multiply(x, y)");
+			var eval = new Evaluator("z = GoLive.ExpressionEvaluator.Tests.ReferenceTests.Multiply(x, y)");
 			eval["x"] = 2;
 			eval["y"] = 3;
 			eval["z"] = 0;
@@ -56,7 +56,7 @@ namespace Tests
 		{
 			var eval = new Evaluator("message = ExampleClass.HelloWorld");
 			eval.AddReference(typeof(TestExternalReference.ExampleClass).Assembly.Location);
-			eval.AddUsing("TestExternalReference");
+			eval.AddUsing("GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference");
 			eval["message"] = "";
 			eval.Exec();
 			Assert.AreEqual("Hello World", eval["message"]);
@@ -67,7 +67,7 @@ namespace Tests
 		{
 			// this should fail without the call to AddReference
 			var eval = new Evaluator("message = ExampleClass.HelloWorld");
-			eval.AddUsing("TestExternalReference");
+			eval.AddUsing("GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference");
 			eval["message"] = "";
 
 			CompilationException ex = Assert.Throws<CompilationException>(
@@ -77,7 +77,7 @@ namespace Tests
 				});
 
 			Assert.IsTrue(
-				ex.Message.Contains("The type or namespace name 'TestExternalReference' could not be found (are you missing a using directive or an assembly reference?)"));
+				ex.Message.Contains("The type or namespace name 'GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference' could not be found (are you missing a using directive or an assembly reference?)"));
 		}
 
 		[Test]

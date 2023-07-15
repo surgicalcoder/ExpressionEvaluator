@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Data_Eval</AssemblyName>
     <RootNamespace>Data.Eval</RootNamespace>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>Data_Eval.snk</AssemblyOriginatorKeyFile>
     <Version>2.5.0</Version>
+    <PackageId>GoLive.ExpressionEvaluator</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
