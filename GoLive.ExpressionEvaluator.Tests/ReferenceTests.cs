@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using NUnit.Framework;
-
-using Data.Eval;
+﻿using Data.Eval;
 using Data.Eval.Compilation;
 using GoLive.ExpressionEvaluator.Tests.ExternalReference;
+using NUnit.Framework;
 
-namespace Tests
+namespace GoLive.ExpressionEvaluator.Tests
 {
 	[TestFixture]
     public class ReferenceTests
@@ -55,7 +50,7 @@ namespace Tests
 		{
 			var eval = new Evaluator("message = ExampleClass.HelloWorld");
 			eval.AddReference(typeof(ExampleClass).Assembly.Location);
-			eval.AddUsing("GoLive.ExpressionEvaluator.GoLive.ExpressionEvaluator.Tests.ExternalReference");
+			eval.AddUsing("GoLive.ExpressionEvaluator.Tests.ExternalReference");
 			eval["message"] = "";
 			eval.Exec();
 			Assert.AreEqual("Hello World", eval["message"]);

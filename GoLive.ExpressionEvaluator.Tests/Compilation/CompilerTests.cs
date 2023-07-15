@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Data.Eval.Compilation;
+using GoLive.ExpressionEvaluator.Tests.Resources;
 using NUnit.Framework;
 
-using Data.Eval.Compilation;
-
-using Tests.Resources;
-
-namespace Tests.Compilation
+namespace GoLive.ExpressionEvaluator.Tests.Compilation
 {
 	[TestFixture]
 	public class CompilerTests

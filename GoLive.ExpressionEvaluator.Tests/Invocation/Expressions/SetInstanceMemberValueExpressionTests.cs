@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Data.Eval.Invocation.Expressions;
 using NUnit.Framework;
 
-using Data.Eval.Invocation.Expressions;
-
-namespace Tests.Invocation.Expressions
+namespace GoLive.ExpressionEvaluator.Tests.Invocation.Expressions
 {
 	[TestFixture]
 	public class SetInstanceMemberValueExpressionTests

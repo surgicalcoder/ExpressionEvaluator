@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using NUnit.Framework;
 
-using NUnit.Framework;
-
-namespace Tests.Reflection
+namespace GoLive.ExpressionEvaluator.Tests.Reflection
 {
 	[TestFixture]
 	public class ReflectionTests

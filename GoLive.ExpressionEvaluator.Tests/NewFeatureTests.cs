@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-
+using Data.Eval;
+using GoLive.ExpressionEvaluator.Tests.Resources;
 using NUnit.Framework;
 
-using Data.Eval;
-
-using Tests.Resources;
-
-namespace Tests
+namespace GoLive.ExpressionEvaluator.Tests
 {
 	[TestFixture]
 	public class NewFeatureTests

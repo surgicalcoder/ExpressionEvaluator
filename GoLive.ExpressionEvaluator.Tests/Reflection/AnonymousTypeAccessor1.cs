@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Tests.Reflection
+namespace GoLive.ExpressionEvaluator.Tests.Reflection
 {
 	/// <summary>
 	///		This is a hand created proof of concept class for the code that will need to be

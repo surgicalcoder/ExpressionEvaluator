@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Data.Eval.CodeWriting;
 using NUnit.Framework;
 
-using Data.Eval.CodeWriting;
-
-namespace Tests.CodeWriting
+namespace GoLive.ExpressionEvaluator.Tests.CodeWriting
 {
 	[TestFixture]
 	public class CSharpClassNameFormatterTests

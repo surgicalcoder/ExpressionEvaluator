@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tests.Reflection
+namespace GoLive.ExpressionEvaluator.Tests.Reflection
 {
 	internal sealed class GetInstancePropertyValueExpression
 	{

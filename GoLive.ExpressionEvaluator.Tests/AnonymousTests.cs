@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿using Data.Eval;
 using NUnit.Framework;
 
-using Data.Eval;
-
-namespace Tests
+namespace GoLive.ExpressionEvaluator.Tests
 {
 	[TestFixture]
 	public class AnonymousTests

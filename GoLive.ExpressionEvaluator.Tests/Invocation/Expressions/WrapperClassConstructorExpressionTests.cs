@@ -1,12 +1,9 @@
 ﻿using System;
-
+using Data.Eval.Invocation.Expressions;
+using GoLive.ExpressionEvaluator.Tests.Reflection;
 using NUnit.Framework;
 
-using Data.Eval.Invocation.Expressions;
-
-using Tests.Reflection;
-
-namespace Tests.Invocation.Expressions
+namespace GoLive.ExpressionEvaluator.Tests.Invocation.Expressions
 {
 	[TestFixture]
 	public class WrapperClassConstructorExpressionTests

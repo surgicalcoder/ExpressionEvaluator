@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Dynamic;
-
+using Data.Eval;
 using NUnit.Framework;
 
-using Data.Eval;
-
-namespace Tests
+namespace GoLive.ExpressionEvaluator.Tests
 {
 	[TestFixture]
 	public class EvaluatorTests
