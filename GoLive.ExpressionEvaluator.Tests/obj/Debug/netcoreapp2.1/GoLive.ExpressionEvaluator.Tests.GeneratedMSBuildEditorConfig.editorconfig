@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Tests
+build_property.ProjectDir = D:\Work\ExpressionEvaluator\Data_Eval\GoLive.ExpressionEvaluator.Tests\

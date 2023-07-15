@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {}
+  },
+  "projects": {
+    "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
+        "projectName": "GoLive.ExpressionEvaluator.Tests.ExternalReference",
+        "projectPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\GoLive.ExpressionEvaluator.Tests.ExternalReference.csproj",
+        "packagesPath": "C:\\Users\\Monty\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\ExpressionEvaluator\\Data_Eval\\GoLive.ExpressionEvaluator.Tests.ExternalReference\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Monty\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.3.23178.7\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
