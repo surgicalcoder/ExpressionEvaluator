@@ -1,22 +1,16 @@
-# data-eval
-.Net Library for Evaluating Expressions at Runtime
+# GoLive.ExpressionEvaluator
+.net Library for Evaluating Expressions at Runtime, based on fantastic previous work [Data-Eval](https://github.com/bruce-dunwiddie/data-eval), but upgraded to .net6 and nuget dependencies updated.
 
 The goal of this library is to set up a fully featured easy interface for working with C# based expressions as strings with access to as much C# and .Net functionality as possible, with the highest performance and compatibility as possible.
 
 String expressions allow application functionality to be added and modified outside of the application, even viewed and possibly edited by business users with limited technical knowledge.
 
-Available on Nuget, [Data.Eval](https://www.nuget.org/packages/Data.Eval/).
+Available on Nuget, [GoLive.ExpressionEvaluator](https://www.nuget.org/packages/GoLive.ExpressionEvaluator/).
 
-    Install-Package Data.Eval
+    Install-Package GoLive.ExpressionEvaluator
 
 
-[![NuGet](https://img.shields.io/nuget/dt/Data.Eval.svg)](https://www.nuget.org/packages/Data.Eval/)
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-[![Build status](https://ci.appveyor.com/api/projects/status/ewhl0xxqok5yeqr3?svg=true)](https://ci.appveyor.com/project/bruce-dunwiddie/data-eval)
-
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=data-eval&metric=coverage)](https://sonarcloud.io/component_measures?id=data-eval&metric=coverage)
+[![NuGet](https://img.shields.io/nuget/dt/GoLive.ExpressionEvaluator.svg)](https://www.nuget.org/packages/GoLive.ExpressionEvaluator/)
 
 ### Class Documentation
 - [bruce-dunwiddie.github.io/data-eval/](<http://bruce-dunwiddie.github.io/data-eval/html/T_Data_Eval_Evaluator.htm>)
