@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Data.Eval</RootNamespace>
     <PackageId>GoLive.ExpressionEvaluator</PackageId>
     <LangVersion>default</LangVersion>
@@ -20,6 +19,7 @@
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <PackageProjectUrl>https://github.com/surgicalcoder/ExpressionEvaluator</PackageProjectUrl>
     <RepositoryUrl>https://github.com/surgicalcoder/ExpressionEvaluator</RepositoryUrl>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
     
   </PropertyGroup>
 
