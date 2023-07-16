@@ -60,7 +60,6 @@ namespace Data.Eval.Compilation
 		/// </summary>
 		/// <param name="info"></param>
 		/// <param name="context"></param>
-		[SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
 		public override void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
 			info.AddValue("GeneratedClassCode", GeneratedClassCode);
