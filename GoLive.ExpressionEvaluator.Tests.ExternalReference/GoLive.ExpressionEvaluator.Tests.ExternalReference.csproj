@@ -2,10 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>TestExternalReference.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <LangVersion>default</LangVersion>
   </PropertyGroup>
 
 </Project>
