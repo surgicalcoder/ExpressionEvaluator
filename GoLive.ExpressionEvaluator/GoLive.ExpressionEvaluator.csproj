@@ -3,9 +3,24 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Data.Eval</RootNamespace>
-    <Version>2.5.0</Version>
     <PackageId>GoLive.ExpressionEvaluator</PackageId>
     <LangVersion>default</LangVersion>
+    
+    <PackageId>GoLive.ExpressionEvaluator</PackageId>
+    <Authors>SurgicalCoder; Bruce Dunwiddie</Authors>
+    <Company>N/A</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>.net Library for Evaluating Expressions at Runtime</Description>
+    <Copyright>Copyright 2023 - SurgicalCoder et al.</Copyright>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <GenerateRepositoryUrlAttribute>true</GenerateRepositoryUrlAttribute>
+    <PackOnBuild>true</PackOnBuild>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <PackageProjectUrl>https://github.com/surgicalcoder/ExpressionEvaluator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/surgicalcoder/ExpressionEvaluator</RepositoryUrl>
+    
   </PropertyGroup>
 
   <ItemGroup>
